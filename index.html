@@ -1,7 +1,16 @@
 <html>
   
 <body>
-<p><iframe title="YouTube video player" src="//www.youtube.com/embed/zNrW2EK2nIQ?controls=0" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
-<p>&nbsp;</p>
+<iframe id="video" src="//www.youtube.com/embed/zNrW2EK2nIQ?controls=0" frameborder="0" allowfullscreen></iframe>
+
+
+$(function(){
+  $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' });
+
+  // If you want to keep full screen on window resize
+  $(window).resize(function(){
+    $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' });
+  });
+});
 </body>
 </html>
